@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    let tableResultArray = ["ShareView", "WKWebView"]
+    let tableResultArray = ["SharedView", "WKWebView"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,14 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            let viewController = SharedViewController()
+            viewController.title = "SharedView"
+            self.navigationController?.pushViewController(viewController, animated: true)
+        default:
+            break
+        }
     }
 
     /*

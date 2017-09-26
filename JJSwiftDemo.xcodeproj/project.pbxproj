@@ -11,15 +11,31 @@
 		C7AE52EC1F7A48680064C871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AE52EB1F7A48680064C871 /* Assets.xcassets */; };
 		C7AE52EF1F7A48680064C871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AE52ED1F7A48680064C871 /* LaunchScreen.storyboard */; };
 		C7AE52FB1F7A48A70064C871 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE52FA1F7A48A70064C871 /* MainTableViewController.swift */; };
+		C7AE53091F7A4B610064C871 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE53081F7A4B610064C871 /* SharedViewController.swift */; };
+		C7AE530D1F7A4B820064C871 /* HYSharedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE530A1F7A4B820064C871 /* HYSharedButton.swift */; };
+		C7AE530E1F7A4B820064C871 /* HYSharedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE530B1F7A4B820064C871 /* HYSharedType.swift */; };
+		C7AE530F1F7A4B820064C871 /* HYSharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE530C1F7A4B820064C871 /* HYSharedView.swift */; };
+		C7AE53151F7A4B870064C871 /* JJCommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE53121F7A4B870064C871 /* JJCommonUtil.swift */; };
+		C7AE53161F7A4B870064C871 /* JJTextInsetsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */; };
+		D80BCEECF9E9CA2D6B8B36DE /* Pods_JJSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74098A84304E0D4A00D43C4D /* Pods_JJSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74098A84304E0D4A00D43C4D /* Pods_JJSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JJSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78126A2C593F4178EE3A7EEB /* Pods-JJSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JJSwiftDemo/Pods-JJSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		979F1A4A9015DE15AE5A5FA3 /* Pods-JJSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JJSwiftDemo/Pods-JJSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C7AE52E11F7A48680064C871 /* JJSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AE52E41F7A48680064C871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7AE52EB1F7A48680064C871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7AE52EE1F7A48680064C871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7AE52F01F7A48680064C871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7AE52FA1F7A48A70064C871 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		C7AE53081F7A4B610064C871 /* SharedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		C7AE530A1F7A4B820064C871 /* HYSharedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSharedButton.swift; sourceTree = "<group>"; };
+		C7AE530B1F7A4B820064C871 /* HYSharedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSharedType.swift; sourceTree = "<group>"; };
+		C7AE530C1F7A4B820064C871 /* HYSharedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSharedView.swift; sourceTree = "<group>"; };
+		C7AE53121F7A4B870064C871 /* JJCommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJCommonUtil.swift; sourceTree = "<group>"; };
+		C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJTextInsetsLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80BCEECF9E9CA2D6B8B36DE /* Pods_JJSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620B7461F54425F1F657DF39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74098A84304E0D4A00D43C4D /* Pods_JJSwiftDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7AE52D81F7A48680064C871 = {
 			isa = PBXGroup;
 			children = (
 				C7AE52E31F7A48680064C871 /* JJSwiftDemo */,
 				C7AE52E21F7A48680064C871 /* Products */,
+				F38D08CC5208E6A57448ED9D /* Pods */,
+				620B7461F54425F1F657DF39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,12 +80,25 @@
 			isa = PBXGroup;
 			children = (
 				C7AE52FA1F7A48A70064C871 /* MainTableViewController.swift */,
-				C7AE52FC1F7A49080064C871 /* Supporting Files */,
+				C7AE53101F7A4B870064C871 /* Utils */,
+				C7AE52FD1F7A4A060064C871 /* SharedView */,
+				C7AE53061F7A4ACB0064C871 /* Supporting Files */,
 			);
 			path = JJSwiftDemo;
 			sourceTree = "<group>";
 		};
-		C7AE52FC1F7A49080064C871 /* Supporting Files */ = {
+		C7AE52FD1F7A4A060064C871 /* SharedView */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE53081F7A4B610064C871 /* SharedViewController.swift */,
+				C7AE530A1F7A4B820064C871 /* HYSharedButton.swift */,
+				C7AE530B1F7A4B820064C871 /* HYSharedType.swift */,
+				C7AE530C1F7A4B820064C871 /* HYSharedView.swift */,
+			);
+			path = SharedView;
+			sourceTree = "<group>";
+		};
+		C7AE53061F7A4ACB0064C871 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				C7AE52E41F7A48680064C871 /* AppDelegate.swift */,
@@ -66,7 +106,41 @@
 				C7AE52ED1F7A48680064C871 /* LaunchScreen.storyboard */,
 				C7AE52F01F7A48680064C871 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7AE53101F7A4B870064C871 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE53111F7A4B870064C871 /* Common */,
+				C7AE53131F7A4B870064C871 /* Views */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C7AE53111F7A4B870064C871 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE53121F7A4B870064C871 /* JJCommonUtil.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C7AE53131F7A4B870064C871 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F38D08CC5208E6A57448ED9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78126A2C593F4178EE3A7EEB /* Pods-JJSwiftDemo.debug.xcconfig */,
+				979F1A4A9015DE15AE5A5FA3 /* Pods-JJSwiftDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7AE52F31F7A48680064C871 /* Build configuration list for PBXNativeTarget "JJSwiftDemo" */;
 			buildPhases = (
+				4CFC33E5186D7CE8F3B79707 /* [CP] Check Pods Manifest.lock */,
 				C7AE52DD1F7A48680064C871 /* Sources */,
 				C7AE52DE1F7A48680064C871 /* Frameworks */,
 				C7AE52DF1F7A48680064C871 /* Resources */,
+				D23ACDF8F15C430B9A6A9319 /* [CP] Embed Pods Frameworks */,
+				FF6C330D8828396F1B7C8F70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,13 +212,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CFC33E5186D7CE8F3B79707 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JJSwiftDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23ACDF8F15C430B9A6A9319 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JJSwiftDemo/Pods-JJSwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JJSwiftDemo/Pods-JJSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF6C330D8828396F1B7C8F70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JJSwiftDemo/Pods-JJSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C7AE52DD1F7A48680064C871 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AE530E1F7A4B820064C871 /* HYSharedType.swift in Sources */,
+				C7AE53161F7A4B870064C871 /* JJTextInsetsLabel.swift in Sources */,
 				C7AE52FB1F7A48A70064C871 /* MainTableViewController.swift in Sources */,
+				C7AE53091F7A4B610064C871 /* SharedViewController.swift in Sources */,
 				C7AE52E51F7A48680064C871 /* AppDelegate.swift in Sources */,
+				C7AE530F1F7A4B820064C871 /* HYSharedView.swift in Sources */,
+				C7AE53151F7A4B870064C871 /* JJCommonUtil.swift in Sources */,
+				C7AE530D1F7A4B820064C871 /* HYSharedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +407,7 @@
 		};
 		C7AE52F41F7A48680064C871 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78126A2C593F4178EE3A7EEB /* Pods-JJSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -283,6 +423,7 @@
 		};
 		C7AE52F51F7A48680064C871 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979F1A4A9015DE15AE5A5FA3 /* Pods-JJSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

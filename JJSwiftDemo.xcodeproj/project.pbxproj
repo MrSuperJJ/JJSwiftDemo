@@ -17,6 +17,9 @@
 		C7AE530F1F7A4B820064C871 /* HYSharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE530C1F7A4B820064C871 /* HYSharedView.swift */; };
 		C7AE53151F7A4B870064C871 /* JJCommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE53121F7A4B870064C871 /* JJCommonUtil.swift */; };
 		C7AE53161F7A4B870064C871 /* JJTextInsetsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */; };
+		C7AE531F1F7A4DA80064C871 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = C7AE531C1F7A4DA70064C871 /* test.html */; };
+		C7AE53201F7A4DA80064C871 /* WeakScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE531D1F7A4DA70064C871 /* WeakScriptMessageHandler.swift */; };
+		C7AE53211F7A4DA80064C871 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE531E1F7A4DA70064C871 /* WKWebViewController.swift */; };
 		D80BCEECF9E9CA2D6B8B36DE /* Pods_JJSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74098A84304E0D4A00D43C4D /* Pods_JJSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		C7AE530C1F7A4B820064C871 /* HYSharedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSharedView.swift; sourceTree = "<group>"; };
 		C7AE53121F7A4B870064C871 /* JJCommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJCommonUtil.swift; sourceTree = "<group>"; };
 		C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJTextInsetsLabel.swift; sourceTree = "<group>"; };
+		C7AE531C1F7A4DA70064C871 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		C7AE531D1F7A4DA70064C871 /* WeakScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakScriptMessageHandler.swift; sourceTree = "<group>"; };
+		C7AE531E1F7A4DA70064C871 /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				C7AE52FA1F7A48A70064C871 /* MainTableViewController.swift */,
-				C7AE53101F7A4B870064C871 /* Utils */,
 				C7AE52FD1F7A4A060064C871 /* SharedView */,
+				C7AE531B1F7A4DA70064C871 /* WKWebView */,
+				C7AE53101F7A4B870064C871 /* Utils */,
 				C7AE53061F7A4ACB0064C871 /* Supporting Files */,
 			);
 			path = JJSwiftDemo;
@@ -132,6 +139,16 @@
 				C7AE53141F7A4B870064C871 /* JJTextInsetsLabel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C7AE531B1F7A4DA70064C871 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				C7AE531C1F7A4DA70064C871 /* test.html */,
+				C7AE531D1F7A4DA70064C871 /* WeakScriptMessageHandler.swift */,
+				C7AE531E1F7A4DA70064C871 /* WKWebViewController.swift */,
+			);
+			path = WKWebView;
 			sourceTree = "<group>";
 		};
 		F38D08CC5208E6A57448ED9D /* Pods */ = {
@@ -207,6 +224,7 @@
 			files = (
 				C7AE52EF1F7A48680064C871 /* LaunchScreen.storyboard in Resources */,
 				C7AE52EC1F7A48680064C871 /* Assets.xcassets in Resources */,
+				C7AE531F1F7A4DA80064C871 /* test.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,9 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7AE530E1F7A4B820064C871 /* HYSharedType.swift in Sources */,
+				C7AE53201F7A4DA80064C871 /* WeakScriptMessageHandler.swift in Sources */,
 				C7AE53161F7A4B870064C871 /* JJTextInsetsLabel.swift in Sources */,
 				C7AE52FB1F7A48A70064C871 /* MainTableViewController.swift in Sources */,
 				C7AE53091F7A4B610064C871 /* SharedViewController.swift in Sources */,
+				C7AE53211F7A4DA80064C871 /* WKWebViewController.swift in Sources */,
 				C7AE52E51F7A48680064C871 /* AppDelegate.swift in Sources */,
 				C7AE530F1F7A4B820064C871 /* HYSharedView.swift in Sources */,
 				C7AE53151F7A4B870064C871 /* JJCommonUtil.swift in Sources */,

@@ -48,9 +48,13 @@ class MainTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let viewController = SharedViewController()
-            viewController.title = "SharedView"
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let sharedViewController = SharedViewController()
+            sharedViewController.title = tableResultArray[indexPath.row]
+            self.navigationController?.pushViewController(sharedViewController, animated: true)
+        case 1:
+            let webViewController = WKWebViewController()
+            webViewController.title = tableResultArray[indexPath.row]
+            self.navigationController?.pushViewController(webViewController, animated: true)
         default:
             break
         }

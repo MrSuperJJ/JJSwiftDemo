@@ -1,0 +1,25 @@
+<html>
+    <script>
+
+        function JSToSwift() {
+            window.webkit.messageHandlers.JSToSwift.postMessage({'name': '111', 'age': '22'});
+        }
+
+        function SwiftToJS(name, age) {
+            var value = 'name:'+name+',age:'+age
+            alert(value)                                                // 弹窗
+            //document.getElementById('SwitToJSText').value = value     // 修改值
+        }
+
+    </script>
+    <body>
+        <br/>
+        <br/>
+        <br/>
+        <input type="button" value="小移在线" onclick="JSToSwift()"/>
+        <br/>
+        <br/>
+        <br/>
+        <input type="text" value="测试" id="SwitToJSText"/>
+    </body>
+</html>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HYSharedButton: UIButton {
     
@@ -44,7 +45,7 @@ class HYSharedButton: UIButton {
         }
         
         sharedTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(sharedImageView.snp.bottom)
+            make.top.equalTo(sharedImageView.snp.bottom).offset(5)
             make.left.equalTo(self)
             make.bottom.equalTo(self)
             make.width.equalTo(self)

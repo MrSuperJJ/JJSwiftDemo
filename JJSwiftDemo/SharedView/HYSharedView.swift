@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 @objc(HYSharedViewDelegate)
 protocol HYSharedViewDelegate {
@@ -83,6 +82,12 @@ class HYSharedView: UIView {
         return normalScrollView
     }()
     
+    private lazy var bottomDividingLine: UIView = {
+        let bottomDividingLine = UIView()
+        bottomDividingLine.backgroundColor = UIColor(valueRGB: 0xdddddd, alpha: 1)
+        return bottomDividingLine
+    }()
+    
     fileprivate lazy var cancelButton: UIButton = {
         let cancelButton = UIButton()
         cancelButton.setTitle("取消", for: .normal)
@@ -95,28 +100,55 @@ class HYSharedView: UIView {
     fileprivate let animationTime = 0.25
     fileprivate let backgroundViewAlpha: CGFloat = 0.35
     fileprivate var sharedViewHeight: CGFloat = 0
-    private let padding: CGFloat = 15
+    private let padding: CGFloat = 20
     private let topViewHeight: CGFloat = 20
-    private let srollViewHeight: CGFloat = 80
-    private let bottomViewHeight: CGFloat = 50
-    private let sharedButtonWith: CGFloat = ScreenWidth / 3
-    private let sharedButtonHeight: CGFloat = 80
+    private let srollViewHeight: CGFloat = JJAdapter(65)
+    private let bottomDividingLineHeight: CGFloat = 5
+    private let bottomViewHeight: CGFloat = 45
+    private var sharedButtonWith: CGFloat = 0
     private var isNormalScrollViewHidden = false
     
-    init(frame: CGRect, sharedCommonTypes: [SharedCommonType] = [], sharedNormalTypes: [SharedNormalType] = []) {
+    // 兼容OC的初始化方法
+    convenience init(frame: CGRect, commonTypes: [NSInteger], normalTypes: [NSInteger]?) {
+        self.init(frame: frame, commonTypes: commonTypes, normalTypes: normalTypes, title: nil)
+    }
+    
+    // 兼容OC的初始化方法
+    convenience init(frame: CGRect, commonTypes: [NSInteger], normalTypes: [NSInteger]?, title: String?) {
+        var sharedCommonTypes = [SharedCommonType]()
+        var sharedNormalTypes = [SharedNormalType]()
+        commonTypes.forEach { type in
+            if let commonType = SharedCommonType(rawValue: type) {
+                sharedCommonTypes += [commonType]
+            }
+        }
+        if let normalTypes = normalTypes {
+            normalTypes.forEach { type in
+                if let normalType = SharedNormalType(rawValue: type) {
+                    sharedNormalTypes += [normalType]
+                }
+            }
+        }
+        self.init(frame: frame, sharedCommonTypes: sharedCommonTypes, sharedNormalTypes: sharedNormalTypes, title: title)
+    }
+    
+    // Swift初始化方法
+    init(frame: CGRect, sharedCommonTypes: [SharedCommonType], sharedNormalTypes: [SharedNormalType], title: String? = "分享到" ) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clear
+        sharedButtonWith = ScreenWidth / CGFloat(sharedCommonTypes.count >= 3 ? 3 : sharedCommonTypes.count)
         
         if sharedNormalTypes.count > 0 {
-            sharedViewHeight = padding + topViewHeight + padding + srollViewHeight * 2 + padding + bottomViewHeight
+            sharedViewHeight = padding + topViewHeight + padding + srollViewHeight * 2 + padding * 3 + bottomDividingLineHeight + bottomViewHeight
         } else {
             isNormalScrollViewHidden = true
-            sharedViewHeight = padding + topViewHeight + padding + srollViewHeight + bottomViewHeight
+            sharedViewHeight = padding + topViewHeight + padding + srollViewHeight + padding + bottomDividingLineHeight + bottomViewHeight
         }
 
         self.addSubview(backgroundView)
         self.addSubview(sharedView)
         sharedView.addSubview(topView)
+        sharedView.addSubview(bottomDividingLine)
         sharedView.addSubview(cancelButton)
         topView.addSubview(titleView)
         topView.addSubview(titleLeftLine)
@@ -129,9 +161,11 @@ class HYSharedView: UIView {
         
         layoutSnpSubviews()
         
+        titleView.text = title
+        
         commonScrollView.contentSize = CGSize(width: CGFloat(sharedCommonTypes.count) * sharedButtonWith, height: 0)
         for (index, type) in sharedCommonTypes.enumerated() {
-            let frame = CGRect(x: CGFloat(index) * sharedButtonWith, y: 0, width: sharedButtonWith, height: sharedButtonHeight)
+            let frame = CGRect(x: CGFloat(index) * sharedButtonWith, y: 0, width: sharedButtonWith, height: srollViewHeight)
             let sharedButton = HYSharedButton(frame: frame, title: type.title, imageName: type.imageName)
             sharedButton.tag = type.rawValue
             sharedButton.addTarget(self, action: #selector(sharedCommonButtonClicked(sender:)), for: .touchUpInside)
@@ -140,7 +174,7 @@ class HYSharedView: UIView {
         
         normalScrollView.contentSize = CGSize(width: CGFloat(sharedNormalTypes.count) * sharedButtonWith, height: 0)
         for (index, type) in sharedNormalTypes.enumerated() {
-            let frame = CGRect(x: CGFloat(index) * sharedButtonWith, y: 0, width: sharedButtonWith, height: sharedButtonHeight)
+            let frame = CGRect(x: CGFloat(index) * sharedButtonWith, y: 0, width: sharedButtonWith, height: srollViewHeight)
             let sharedButton = HYSharedButton(frame: frame, title: type.title, imageName: type.imageName)
             sharedButton.tag = type.rawValue
             sharedButton.addTarget(self, action: #selector(sharedNormalButtonClicked(sender:)), for: .touchUpInside)
@@ -198,18 +232,29 @@ class HYSharedView: UIView {
         
         if !isNormalScrollViewHidden {
             contentDividingLine.snp.makeConstraints { make in
-                make.left.equalTo(sharedView).offset(JJAdapter(20))
-                make.right.equalTo(sharedView).offset(JJAdapter(-20))
-                make.bottom.equalTo(commonScrollView)
+                make.left.equalTo(sharedView)
+                make.right.equalTo(sharedView)
+                make.bottom.equalTo(commonScrollView).offset(padding)
                 make.height.equalTo(titleLeftLine)
             }
             
             normalScrollView.snp.makeConstraints { make in
                 make.left.equalTo(commonScrollView)
-                make.top.equalTo(commonScrollView.snp.bottom).offset(padding)
+                make.top.equalTo(contentDividingLine.snp.bottom).offset(padding)
                 make.width.equalTo(commonScrollView)
                 make.height.equalTo(commonScrollView)
             }
+        }
+        
+        bottomDividingLine.snp.makeConstraints { make in
+            if !isNormalScrollViewHidden {
+                make.top.equalTo(normalScrollView.snp.bottom).offset(padding)
+            } else {
+                make.top.equalTo(commonScrollView.snp.bottom).offset(padding)
+            }
+            make.left.equalTo(sharedView)
+            make.width.equalTo(sharedView)
+            make.height.equalTo(bottomDividingLineHeight)
         }
         
         cancelButton.snp.makeConstraints { make in

@@ -8,25 +8,28 @@
 
 import Foundation
 
-/// 常用
 protocol SharedType {
     var title: String { get }      ///标题
     var imageName: String { get }  ///图片名称
 }
 
+/// 常用
 @objc enum SharedCommonType: NSInteger, SharedType {
     case sendToColleague = 1000 ///发送给同事
     case wechatFriend           ///分享给微信好友
     case wechatCircle           ///分享到微信朋友圈
+    case shortMessage           ///短信
     
     var title: String {
         switch self {
         case .sendToColleague:
-            return "发送给同事"
+            return "同事"
         case .wechatFriend:
             return "微信好友"
         case .wechatCircle:
             return "微信朋友圈"
+        case .shortMessage:
+            return "短信"
         }
     }
     
@@ -38,6 +41,8 @@ protocol SharedType {
             return "wechatFriend"
         case .wechatCircle:
             return "wechatCircle"
+        case .shortMessage:
+            return "shortMessage"
         }
     }
 }
@@ -50,7 +55,7 @@ protocol SharedType {
     var title: String {
         switch self {
         case .copy:
-            return "复制"
+            return "复制链接"
         case .refresh:
             return "刷新"
         }

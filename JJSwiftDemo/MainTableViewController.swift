@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    let tableResultArray = ["SharedView", "WKWebView"]
+    let tableResultArray = ["SharedView", "WKWebView", "BLE"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,10 @@ class MainTableViewController: UITableViewController {
             let webViewController = WKWebViewController()
             webViewController.title = tableResultArray[indexPath.row]
             self.navigationController?.pushViewController(webViewController, animated: true)
+        case 2:
+            let bleViewController = BLEViewController()
+            bleViewController.title = tableResultArray[indexPath.row]
+            self.navigationController?.pushViewController(bleViewController, animated: true)
         default:
             break
         }

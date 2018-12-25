@@ -3,7 +3,7 @@
 //  e企_2015
 //
 //  Created by 叶佳骏 on 2017/9/25.
-//  Copyright © 2017年 中移（杭州）信息技术有限公司. All rights reserved.
+//  Copyright © 2017年 yejiajun. All rights reserved.
 //
 
 import UIKit
